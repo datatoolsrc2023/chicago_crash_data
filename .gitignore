@@ -4,4 +4,8 @@ __pycache__/
 .DS_Store
 .vscode
 *.csv
-db_config.py
+.env
+target/
+dbt_packages/
+logs/
+profiles.yml
