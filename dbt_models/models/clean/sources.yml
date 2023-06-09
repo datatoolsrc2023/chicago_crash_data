@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: chicago_crashes
+    database: traffic_crashes
+    schema: public
+    tables:
+      - name: crashes_raw
+      - name: vehicles_raw
+      - name: people_raw
