@@ -1,0 +1,20 @@
+models:
+  - name: crashes
+    columns:
+      - name: crash_record_id
+        tests:
+          - unique
+  - name: vehicles
+    columns:
+      - name: crash_record_id
+        tests:
+          - relationships:
+              to: ref('crashes')
+              field: crash_record_id
+  - name: people
+    columns:
+      - name: crash_record_id
+        tests:
+          - relationships:
+              to: ref('crashes')
+              field: crash_record_id
