@@ -30,13 +30,17 @@ def import_csv(resource, csv_url):
 def db_cnx(host=os.getenv("TC_PG_HOST"),
            dbname=os.getenv("TC_PG_DB_NAME"),
            user=os.getenv("TC_PG_USERNAME"),
-           password=os.getenv("TC_PG_PASSWORD")):
+           password=os.getenv("TC_PG_PASSWORD"),
+           return_str=False):
     '''
     Create and return Postgres database connection.
+    TODO get port from environment variables
     '''
-
-    conn_string = f"host={host} dbname={dbname} user={user} password={password}"
-    return psycopg2.connect(conn_string)
+    conn_string = f'postgresql://{user}:{password}@{host}:5432/{dbname}'
+    if return_str:
+        return conn_string
+    else:
+        return psycopg2.connect(conn_string)
 
 
 def get_sql_from_filename(filename):

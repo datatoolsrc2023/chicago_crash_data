@@ -114,9 +114,9 @@ def dbt_clean_and_load():
 
 @flow
 async def main_flow():
-    parallel_subflows = [crashes_flow(csv_urls), people_flow(csv_urls),
-                         vehicles_flow(csv_urls)]
-    await asyncio.gather(*parallel_subflows)
+    #parallel_subflows = [crashes_flow(csv_urls), people_flow(csv_urls),
+    #                     vehicles_flow(csv_urls)]
+    #await asyncio.gather(*parallel_subflows)
     dbt_clean_and_load()
 
 
