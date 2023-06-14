@@ -26,7 +26,7 @@ $ python -m venv venv
 $ source venv/bin/activate
 $ python -m pip install -r requirements.txt
 ```
-1. Rename `orchestration/.env-example` to `.env` and update values.
+1. Rename `.env-example` to `.env` and update values.
 1. Rename `dbt_models/profiles-example.yml` to `profiles.yml` and update values.
 
 ### Running the code
