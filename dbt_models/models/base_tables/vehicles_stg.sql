@@ -22,10 +22,13 @@ SELECT
         when make = 'TESLA MOTORS' then 'TESLA'
         when make = 'RANGE ROVER OF NORTH AMERICA' then 'RANGE ROVER'
         when make = 'PONTIAC (CANADIAN)' then 'PONTIAC'
+        when make IS NULL then 'UNKNOWN'
         else make end as clean_make,
-    model,
+    case when model IS NULL then 'UNKNOWN'
+         else model end as model,
     lic_plate_state,
-    vehicle_year::INTEGER,
+    case when vehicle_year is NULL then 'UNKNOWN'
+         else vehicle_year end as vehicle_year,
     vehicle_defect,
     vehicle_type,
     vehicle_use,
